@@ -73,6 +73,15 @@ def new_matrix(rows = 4, cols = 4):
             m[c].append( 0 )
     return m
 
+def duplicate(m): #duplicate matrix
+    n = [] #to be returned
+    for v in m:
+        z = [] #one row
+        for i in v:
+            z.append(i)
+        n.append(z)
+    return n
+
 def mag(v): #magnitude of vector
     s = 0
     for i in v:

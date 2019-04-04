@@ -14,7 +14,7 @@ def argify(line):
             pass
     return args
 
-def parse(fname, edge, polygon, orders, screen, color):
+def parse(fname, edge, polygon, csystems, screen, color):
     transform = {
         "scale": dilate,
         "move": translate,
@@ -41,7 +41,7 @@ def parse(fname, edge, polygon, orders, screen, color):
             args = f.next()
             #print(args)
             args = argify(args)
-            transform[line](orders,args)
+            transform[line](csystems[-1],args)
         elif line in shape:
             args = f.next()
             args = argify(args)
@@ -50,29 +50,33 @@ def parse(fname, edge, polygon, orders, screen, color):
             args = f.next()
             args = argify(args)
             solid[line](polygon,args)
-        elif line == "apply":
-            matrix_mult(orders,edge)
-            matrix_mult(orders,polygon)
-            clear_screen(screen)
-            draw_lines(edge,screen,color)
-            draw_polygons(polygon,screen,color)
-        elif line == "ident":
-            orders = new_matrix()
-            ident(orders)
+        #elif line == "apply":
+        #    matrix_mult(orders,edge)
+        #    matrix_mult(orders,polygon)
+        #    clear_screen(screen)
+        #    draw_lines(edge,screen,color)
+        #    draw_polygons(polygon,screen,color)
+        #elif line == "ident":
+        #    orders = new_matrix()
+        #    ident(orders)
+        elif line == "push":
+            csystems.append(duplicate(csystems[-1]))
+        elif line == "pop":
+            del csystems[-1]
         elif line == "save":
     #        print_matrix(edge)
             name = f.next()
             name = name[:len(name)-1]
             save_extension(screen,name)
         elif line == "display":
-            clear_screen(screen)
-            draw_lines(edge,screen,color)
-            draw_polygons(polygon,screen,color)
+    #        clear_screen(screen)
+    #        draw_lines(edge,screen,color)
+    #        draw_polygons(polygon,screen,color)
 #            print_matrix(edge)
             display(screen)
-        elif line == "clear":
-            edge = []
-            polygon = []
+        #elif line == "clear":
+        #    edge = []
+        #    polygon = []
         else:
             print line
     f.close()
