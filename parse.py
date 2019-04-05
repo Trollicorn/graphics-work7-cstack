@@ -36,12 +36,14 @@ def parse(fname, edge, polygon, csystems, screen, color):
     for line in f:
     #    print(type(line))
         line = line[:len(line)-1]
-    #    print("[" + line + "]")
         if line in transform:
+            #print("[" + line + "]")
+            #print_matrix(csystems[-1])
             args = f.next()
             #print(args)
             args = argify(args)
             transform[line](csystems[-1],args)
+
         elif line in shape:
             args = f.next()
             args = argify(args)
@@ -69,6 +71,7 @@ def parse(fname, edge, polygon, csystems, screen, color):
             csystems.append(duplicate(csystems[-1]))
         elif line == "pop":
             del csystems[-1]
+
         elif line == "save":
     #        print_matrix(edge)
             name = f.next()
@@ -83,6 +86,6 @@ def parse(fname, edge, polygon, csystems, screen, color):
         #elif line == "clear":
         #    edge = []
         #    polygon = []
-        else:
-            print line
+    #    else:
+    #        print line
     f.close()

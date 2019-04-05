@@ -10,7 +10,8 @@ def translate(matrix,args):
     m[3][0] = x
     m[3][1] = y
     m[3][2] = z
-    matrix_mult(m,matrix)
+    matrix_mult(matrix,m)
+    replace(matrix,m)
 
 def dilate(matrix,args):
     x = args[0]
@@ -21,7 +22,8 @@ def dilate(matrix,args):
     m[0][0] = x
     m[1][1] = y
     m[2][2] = z
-    matrix_mult(m,matrix)
+    matrix_mult(matrix,m)
+    replace(matrix,m)
 
 def rotate(matrix,args):
     axis = args[0]
@@ -41,7 +43,8 @@ def rotateZ(matrix,angle):
     m[0][1] = sin(angle)
     m[1][0] = -1 * m[0][1]
     m[1][1] = m[0][0]
-    matrix_mult(m,matrix)
+    matrix_mult(matrix,m)
+    replace(matrix,m)
 
 def rotateX(matrix,angle):
     m = new_matrix()
@@ -50,7 +53,8 @@ def rotateX(matrix,angle):
     m[1][2] = sin(angle)
     m[2][1] = -1 * m[1][2]
     m[2][2] = m[1][1]
-    matrix_mult(m,matrix)
+    matrix_mult(matrix,m)
+    replace(matrix,m)
 
 def rotateY(matrix,angle):
     m = new_matrix()
@@ -59,4 +63,5 @@ def rotateY(matrix,angle):
     m[2][0] = sin(angle)
     m[0][2] = -1 * m[2][0]
     m[0][0] = m[2][2]
-    matrix_mult(m,matrix)
+    matrix_mult(matrix,m)
+    replace(matrix,m)

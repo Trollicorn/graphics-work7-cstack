@@ -82,6 +82,13 @@ def duplicate(m): #duplicate matrix
         n.append(z)
     return n
 
+def replace(m1,m2): #change contents of m1 to be m2
+    for i in range(len(m1)):
+        for j in range(len(m1)):
+            m1[i][j] = m2[i][j]
+    #del m2
+
+
 def mag(v): #magnitude of vector
     s = 0
     for i in v:
