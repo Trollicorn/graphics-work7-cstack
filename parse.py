@@ -45,11 +45,17 @@ def parse(fname, edge, polygon, csystems, screen, color):
         elif line in shape:
             args = f.next()
             args = argify(args)
+            matrix_mult(csystems[-1],edge)
             shape[line](edge,args)
+            draw_lines(edge,screen,color)
+            edge = []
         elif line in solid:
             args = f.next()
             args = argify(args)
             solid[line](polygon,args)
+            matrix_mult(csystems[-1],polygon)
+            draw_polygons(polygon,screen,color)
+            polygon = []
         #elif line == "apply":
         #    matrix_mult(orders,edge)
         #    matrix_mult(orders,polygon)
