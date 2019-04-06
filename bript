@@ -1,39 +1,249 @@
-#head
-sphere
-0 400 0 75
-#eyes
-sphere
-30 430 60 10
-sphere
--30 430 60 10
-#neck
-box
--20 330 20 40 40 40
-#body
-box
--90 290 40 180 200 80
-#arms
-box
--60 90 20 30 60 40
-box
-30 90 20 30 60 40
-#legs
-box
-90 250 20 110 20 40
-box
--200 250 20 110 20 40
-#saber
-box
-200 270 10 20 60 20
-box
-205 475 5 10 205 10
-#making nice
-rotate
-x 20
+#BODY
+push
+move
+250 250 0
+scale
+0.7 0.7 0.7
+  rotate
+  y 90
 rotate
 y -20
+box
+-90 100 40 180 200 80
+#NECK
+push
 move
-250 0 0
-apply
-save
-thing.png
+0 120 0
+box
+-20 20 20 40 40 40
+#HEAD
+push
+move
+0 75 0
+  rotate
+  y 90
+sphere
+0 0 0 60
+#RIGHT EYE
+push
+move
+-30 30 50
+sphere
+0 0 0 10
+pop
+#RIGHT BROW
+push
+move
+-30 50 50
+rotate
+z -25
+box
+-20 5 5 40 10 10
+pop
+#LEFT EYE
+push
+move
+30 30 50
+sphere
+0 0 0 10
+pop
+#LEFT BROW
+push
+move
+30 50 50
+rotate
+z 25
+box
+-20 5 5 40 10 10
+pop
+#MOUTH
+push
+move
+0 -30 50
+rotate
+x -60
+torus
+0 0 0 3 15
+pop
+pop
+pop
+#RIGHT ARM
+push
+move
+-110 80 0
+rotate
+x -65
+box
+-20 20 20 40 120 40
+#RIGHT LOWER ARM
+push
+move
+0 -100 0
+rotate
+x -20
+box
+-20 0 20 40 100 40
+#SWORD
+push
+move
+0 -110 0
+rotate
+z 90
+box
+-50 10 10 60 20 20
+box
+-250 5 5 200 10 10
+move
+-47 0 0
+rotate
+z 90
+torus
+0 0 0 5 12
+pop
+pop
+pop
+#LEFT ARM
+push
+move
+110 80 0
+rotate
+x 20
+box
+-20 20 20 40 120 40
+#LEFT LOWER ARM
+push
+move
+0 -100 0
+rotate
+x -80
+box
+-20 0 20 40 100 40
+  #SWORD
+  push
+  move
+  0 -110 0
+  box
+  -10 10 10 60 20 20
+  box
+  50 5 5 200 10 10
+  move
+  47 0 0
+  rotate
+  z 90
+  torus
+  0 0 0 5 12
+  pop
+pop
+pop
+#RIGHT LEG
+push
+move
+-60 -120 0
+rotate
+x -30
+box
+-20 20 20 40 115 40
+#RIGHT LOWER LEG
+push
+move
+0 -95 0
+rotate
+x 30
+box
+-20 0 20 40 115 40
+pop
+pop
+#LEFT LEG
+push
+move
+60 -120 0
+rotate
+x 30
+box
+-20 20 20 40 115 40
+#LEFT LOWER LEG
+push
+move
+0 -95 0
+rotate
+x 30
+box
+-20 0 20 40 115 40
+pop
+pop
+pop
+#SIGNATURE
+push
+move
+400 40 0
+scale
+2 2 1
+##L
+line
+0 0 0 0 -10 0
+line
+0 -10 0 4 -10 0
+##O
+move
+7 0 0
+line
+0 -5 0 2 0 0
+line
+2 0 0 4 -5 0
+line
+4 -5 0 2 -10 0
+line
+2 -10 0 0 -5 0
+##B
+move
+7 0 0
+line
+0 0 0 0 -10 0
+line
+0 0 0 4 -2 0
+line
+4 -2 0 0 -4 0
+line
+0 -4 0 4 -7 0
+line
+4 -7 0 0 -10 0
+##S
+move
+7 0 0
+line
+4 0 0 0 -3 0
+line
+0 -3 0 4 -7 0
+line
+4 -7 0 0 -10 0
+##T
+move
+7 0 0
+line
+0 0 0 4 0 0
+line
+2 0 0 2 -10 0
+##E
+move
+7 0 0
+line
+0 0 0 0 -10 0
+line
+0 0 0 4 0 0
+line
+0 -5 0 4 -5 0
+line
+0 -10 0 4 -10 0
+##R
+move
+7 0 0
+line
+0 0 0 0 -10 0
+line
+0 0 0 4 -3 0
+line
+4 -3 0 0 -6 0
+line
+0 -6 0 4 -10 0
+pop
+display

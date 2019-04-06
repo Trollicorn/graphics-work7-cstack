@@ -8,7 +8,7 @@ def argify(line):
     args = line.split()
     for i in range(len(args)):
         try:
-            args[i] = int(args[i])
+            args[i] = float(args[i])
         except ValueError:
     #        print(args[0])
             pass
@@ -47,8 +47,8 @@ def parse(fname, edge, polygon, csystems, screen, color):
         elif line in shape:
             args = f.next()
             args = argify(args)
-            matrix_mult(csystems[-1],edge)
             shape[line](edge,args)
+            matrix_mult(csystems[-1],edge)
             draw_lines(edge,screen,color)
             edge = []
         elif line in solid:
