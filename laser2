@@ -58,7 +58,7 @@ push
 move
 110 80 0
 rotate
-z 67.5
+z 56.25
 box
 -20 20 20 40 120 40
 #LEFT LOWER ARM
@@ -66,7 +66,7 @@ push
 move
 0 -100 0
 rotate
-z -45
+z -30
 box
 -20 0 20 40 100 40
 #LEFT HAND
